@@ -1,0 +1,39 @@
+
+User view
+----------- 
+
+/home 
+    GET	--> /movies
+
+ ==> login/signup button
+
+POST --> /login   ==> redirect to home page on submission
+POST --> /signup  ==> redirect to login page after success
+
+
+GET --> /movies/{name}/{id}  --> individual details page  --> Book Tickets button
+
+GET	--> /movies/{name}/{id}/theaters   --> List of theaters with timing and dates
+
+GET	--> /movies/{name}/{id}/theaters/{theater_id}/screen    --> Grid layout
+
+POST  --> /movies/{name}/{id}/theaters/{theater_id}/screen/bookticket  --> onSubmit 
+
+
+Owner view
+-----------
+
+/home
+	GET --> /theaters => List of all theaters owned by him
+
+	Add Theaters button
+		POST --> /theaters
+
+	--> /theaters/{id}  
+
+			--> Add movies button (list of movies under particular theater owner)
+
+			--> Add screens button 
+
+			--> Add shows button (list of shows under particular theater in a screen)
+

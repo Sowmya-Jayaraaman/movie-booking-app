@@ -1,0 +1,74 @@
+
+{
+
+Users
+	id: uuid
+	firstname: string
+	lastname: string
+	password: string
+	email: string
+	Owner: boolean
+
+Movies
+	id: uuid
+	name: string
+	image: media
+	description: string
+	rating: number
+	language: string
+	runtime: string
+	releaseData: date
+	genre: string
+
+
+Theaters
+	id: uuid
+	name: string
+
+
+owner-theater mapping
+	id: uuid
+	owner_id: uuid
+	theater_id: uuid
+	
+
+Movie-theater mapping
+	id: uuid
+	movie_id: uuid
+	theater_id: uuid
+
+
+screen-theater mapping
+	id: uuid
+	screen_id: uuid
+	theater_id: uuid
+
+
+Screens: 
+	id: uuid
+	name: string
+	capacity: number
+	price_per_seat: number
+	booked_seats: number[]
+
+
+screen-show mapping 
+	id: uuid
+	show_id: uuid
+	screen_id
+
+Shows: 
+	id: uuid
+	timing: time
+	date: date
+
+Booking
+	id: uuid
+	user_id: uuid
+	theater_id: uuid
+	screen_id: uuid 
+	show_id: uuid
+	seats_count: number
+	booked_seats: number[]
+	totalCost: number
+}	
