@@ -38,12 +38,6 @@ Movie-theater mapping
 	theater_id: uuid
 
 
-screen-theater mapping
-	id: uuid
-	screen_id: uuid
-	theater_id: uuid
-
-
 Screens: 
 	id: uuid
 	name: string
@@ -51,16 +45,22 @@ Screens:
 	price_per_seat: number
 	booked_seats: number[]
 
+screen-theater mapping
+	id: uuid
+	screen_id: uuid
+	theater_id: uuid
+
+Shows: 
+	id: uuid
+	timing: time
+	date: date
+
 
 screen-show mapping 
 	id: uuid
 	show_id: uuid
 	screen_id
 
-Shows: 
-	id: uuid
-	timing: time
-	date: date
 
 Booking
 	id: uuid

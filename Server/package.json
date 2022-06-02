@@ -1,0 +1,21 @@
+{
+  "name": "moving-booking-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migrate:up": "node migrate.js --flag=up",
+    "migrate:down": "node migrate.js --flag=down"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "hapi": "^16.1.0",
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.19.2",
+    "traverse-folders": "^1.1.2",
+    "umzug": "^3.1.1"
+  }
+}
