@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     )
 
-    Booking.associate = (models) => {
+    Booking.associate = (models) => {        
         Booking.belongsTo(models.user, {
           foreignKey: {
             name: 'userId',

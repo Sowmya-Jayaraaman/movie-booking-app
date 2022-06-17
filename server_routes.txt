@@ -1,0 +1,231 @@
+
+
+  // server.route([
+  //   {
+  //   method: 'GET',
+  //   path: '/',
+  //   handler: function (request, reply) {
+  //     reply('Hello Sowmya!!');
+  //   }
+  // },
+
+  //   {
+  //     method: 'POST',
+  //     path: '/login',
+  //     config: {
+          
+  //     handler: function (request, reply) {
+  //       reply('Hello Sowmya!!');
+  //     },
+  //         validate: {
+  //           payload: {
+  //             email: Joi.string().email().required(),
+  //             // name: Joi.string().min(3).max(10),
+  //             // password: Joi.string().min(6).max(200).required()
+  //           }
+  //         }
+  //       }
+    
+  // },
+
+
+//   {
+//     method: 'POST',
+//     path: '/login',
+//     config: {
+        
+//     handler: function (request, reply) {
+//       reply('Hello Sowmya!!');
+//     },
+//         validate: {
+//           payload: 
+//           Joi.object().keys({
+//             email: Joi.string()
+//               .email()
+//               .allow(null, '')
+//               .optional(),
+//             id: Joi.string(),
+//             firstName: Joi.string(),
+//             lastName: Joi.string(),
+//           }),
+//         }
+//       }
+  
+// },
+
+
+
+
+  // {
+  //   method: 'GET',
+  //   path: '/home/{name?}',
+  //   handler: function (request, reply) {
+  //     const user = request.params.name ? request.params.name : 'user';
+  //     reply(`Welcome ${user}!`)
+  //   }
+  // },
+
+
+  // {
+  //   method: 'GET',
+  //   path: '/root',
+  //   handler: function (request, reply) {
+  //     reply.redirect('/');
+  //   }
+  // },
+
+  // {
+  //   method: 'GET',
+  //   path: '/home/myquery',
+  //   handler: function (request, reply) {
+  //       reply(`Hello ${request.query.name}!`);
+  //   }
+  // },
+
+  // {
+  //   method: 'POST',
+  //   path: '/submit',
+  //   handler: function (request, reply) {
+  //     const data = request.payload;
+  //     console.log("data--->", data);
+  //       reply(`Hellllo ${data.username}!`);
+  //   }
+  // }
+
+  // ]);
+
+
+const madge = require('madge');
+
+// madge('path/to/models').then((res) => {
+// 	console.log("Madge----->", res.obj());
+// });
+
+
+//   const validateFunc = async function (decoded, request, callback) {
+//     const token = request.headers.authorization.split(' ')[1];
+//     const decodeToken = jsonwebtoken.decode(token)
+//     const { id } = decodeToken;
+//     const condition = { id }
+//     const result  = await userService.getData(condition, false).then((user) => {
+//         return user.dataValues
+//     }).catch((err) => {
+//         return "Email is not found!"
+//     }); 
+
+//     return result.id ? callback(null, true) : callback(null, false);
+    
+// };
+ 
+//    server.register({
+//     register: require('hapi-auth-jwt2'),
+//  }, (err) => {
+//      if (err) {
+//          console.log('Failed loading plugin');
+//      }
+//  });
+
+  // server.auth.strategy('myjwt', 'jwt',
+  // { 
+  //   key: 'NeverShareYourSecret', 
+  //   validateFunc,
+  // });
+ 
+  // server.auth.default('myjwt');
+
+
+
+    // try {
+    //     const result = await userService.getData(condition, false);
+    //     console.log("result",result)
+    //     if (result) {
+    //         jwt = jsonwebtoken.sign({ id: result.dataValues.id, owner: result.dataValues.owner }, 'NeverShareYourSecret');
+
+    //         request.cookieAuth.set({ cid: result.dataValues.id });
+
+    //         return reply({ ...result.dataValues, token: jwt });
+    //     }
+    //     else {
+    //         return reply("Not found");
+    //     }
+
+    // } catch (error) {
+    //     console.log(error)
+    // }
+
+
+//const login = async (request, reply) => {
+
+   // const { email, password } = request.payload;
+
+   // const condition = { email }
+   // let jwt;
+
+   // const result = await userService.getData(condition, false).then((user => {
+
+     //   jwt = jsonwebtoken.sign({ id: user.dataValues.id, owner: user.dataValues.owner }, appConstants.jwtKey);
+
+    //    request.cookieAuth.set({ cid: user.dataValues.id });
+
+     //   return user.dataValues;
+   // })
+
+   // ).catch(err => {
+     //   return { "message": "email not found!" }
+   // });
+
+   // reply({ ...result, token: jwt })
+
+}//
+
+
+
+
+  //   const validateJWTFunc = async function (decoded, request, callback) {
+  //     const token = request.headers.authorization.split(' ')[1];
+  //     const decodeToken = jsonwebtoken.decode(token)
+  //     const { id } = decodeToken;
+  //     const condition = { id }
+  //     const result  = await userService.getData(condition, false).then((user) => {
+  //         return user.dataValues
+  //     }).catch((err) => {
+  //         return "Email is not found!"
+  //     }); 
+
+  //     return result.id ? callback(null, true) : callback(null, false);
+
+  // };
+
+  //    server.register({
+  //     register: require('hapi-auth-jwt2'),
+  //  }, (err) => {
+  //      if (err) {
+  //          console.log('Failed loading plugin');
+  //      }
+  //  });
+
+  // server.auth.strategy('myjwt', 'jwt',
+  // { 
+  //   key: appConstants.jwtKey, 
+  //   validateFunc:validateJWTFunc,
+  // });
+
+  // server.auth.default('myjwt');
+
+
+
+  // const validateCookieFunc = async function (request, session, callback) {
+
+  //     const { cid } = session;
+  //     const condition = { id: cid }
+  //     const result  = await userService.getData(condition, false).then((user) => {
+  //         return user.dataValues
+  //     }).catch((err) => {
+  //         return "Email is not found!"
+  //     }); 
+
+  //     return result.id ? callback(null, true) : callback(null, false);
+  // }
+
+
+

@@ -2,16 +2,16 @@
 const { models } = require('../config/modelConfig');
 const helperService = require('../helpers/service');
 
-const User = models.user;
+const Session = models.session;
    
 
 async function getData(condition, is_multi) {
 
     const result = is_multi ? 
     Object.keys(condition).length > 0 ? 
-    helperService.findAllHelperWithCondition(User, condition):
-    helperService.findAllHelper(User) :
-    helperService.findOneHelper(User, condition)
+    helperService.findAllHelperWithCondition(Session, condition):
+    helperService.findAllHelper(Session) :
+    helperService.findOneHelper(Session, condition)
 
     return result
 
@@ -21,15 +21,15 @@ async function getData(condition, is_multi) {
 async function createData(data, is_multi) {
 
     const result =  is_multi ? 
-    helperService.bulkCreateHelper(User, data) :
-    helperService.createHelper(User, data)
+    helperService.bulkCreateHelper(Session, data) :
+    helperService.createHelper(Session, data)
 
     return result
 }
 
 async function updateData(condition, data) {
 
-    const result =  helperService.updateHelper(User, condition, data)
+    const result =  helperService.updateHelper(Session, condition, data)
 
       return result[0] ? "Data updated Successfully!" : "Failed to update data!"
 
@@ -37,7 +37,7 @@ async function updateData(condition, data) {
 
 async function deleteData(condition) {
 
-    const result = helperService.deleteHelper(User, condition)
+    const result = helperService.deleteHelper(Session, condition)
 
       return result ? "Data deleted Successfully!" : "Failed to delete data!"
 
