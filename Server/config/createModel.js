@@ -19,13 +19,11 @@ module.exports = (sequelize, DataTypes) => {
         modelFiles[file] =  modelFiles[file](sequelize, DataTypes)
     }
 
-
     Object.keys(modelFiles).forEach(function(modelName) {
         if (modelFiles[modelName].associate) {
            modelFiles[modelName].associate(modelFiles);
         }
-      });
-      
+      });  
 
     return modelFiles
 }

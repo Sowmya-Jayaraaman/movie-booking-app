@@ -1,6 +1,6 @@
 const { Sequelize } = require('sequelize');
 const { Umzug, SequelizeStorage } = require('umzug');
-const { models } = require('./config/modelConfig');
+const { db, models } = require('./config/modelConfig');
 
 const sequelize = new Sequelize('movie_booking', 'sowmya', 'password', {
   host: 'localhost',
@@ -17,8 +17,8 @@ const umzug = new Umzug({
       const migration = require(path)
       return {
         name,
-        up: async () => migration.up(context, models),
-        down: async () => migration.down(context, models),
+        up: async () => migration.up(context, db),
+        down: async () => migration.down(context, db),
       }
     },
   },

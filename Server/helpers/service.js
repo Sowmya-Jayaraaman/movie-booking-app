@@ -20,7 +20,6 @@ async function createHelper(model, data) {
     return await model.create(data);
 }
 
-
 async function updateHelper(model, condition, data) {
     return await model.update(data, {
         where: condition
